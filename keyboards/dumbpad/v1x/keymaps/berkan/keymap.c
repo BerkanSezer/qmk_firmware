@@ -18,21 +18,22 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
             BASE LAYER
+            M Prefix: Magnet App for MacOS
     /-----------------------------------------------------`
-    |             |    7    |    8    |    9    |  Bkspc  |
+    |             |   Esc   |    8    |    9    |  Bkspc  |
     |             |---------|---------|---------|---------|
-    |             |    4    |    5    |    6    |   Esc   |
+    |             |   Tab   |   MLT   |   MRT   |   Esc   |
     |             |---------|---------|---------|---------|
-    |             |    1    |    2    |    3    |   Tab   |
+    |             |  Shift  |   MLB   |   MRB   |    MF   |
     |-------------|---------|---------|---------|---------|
-    | Left mouse  |  TT(1)  |    0    |    .    |  Enter  |
+    | Left mouse  |  TT(1)  |   Alt   |   Cmd   |  Enter  |
     \-----------------------------------------------------'
     */
     [0] = LAYOUT(
-                    KC_7,      KC_8,    KC_9,             KC_BSPC,
-                    KC_4,      KC_5,    KC_6,             KC_ESC,
-                    KC_1,      KC_2,    KC_3,             KC_TAB,
-        KC_BTN1,    TT(1),     KC_0,    LSFT_T(KC_DOT),   KC_ENTER
+                    KC_ESC,     KC_LEFT,        KC_RIGHT,       KC_BSPC,
+                    KC_TAB,     C(A(KC_U)),     C(A(KC_I)),     KC_ESC,
+                    KC_LSFT,    C(A(KC_J)),     C(A(KC_K)),     C(A(KC_ENT)),
+        KC_MPLY,    TT(1),      KC_RALT,        KC_LGUI,        KC_ENTER
     ),
     /*
             SUB LAYER
@@ -87,18 +88,18 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             case 0:
                 // main layer - move mouse right (CW) and left (CCW)
                 if (clockwise) {
-                    tap_code(KC_MS_R);
+                    tap_code(KC_VOLU);
                 } else {
-                    tap_code(KC_MS_L);
+                    tap_code(KC_VOLD);
                 }
                 break;
 
             default:
                 // other layers - =/+ (quals/plus) (CW) and -/_ (minus/underscore) (CCW)
                 if (clockwise) {
-                    tap_code(KC_EQL);
+                    tap_code(KC_MNXT);
                 } else {
-                    tap_code(KC_MINS);
+                    tap_code(KC_MPRV);
                 }
                 break;
         }

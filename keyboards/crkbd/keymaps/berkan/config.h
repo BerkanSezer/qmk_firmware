@@ -1,5 +1,3 @@
-
-
 #pragma once
 
 //#define USE_MATRIX_I2C
@@ -33,3 +31,5 @@
 #define NO_ACTION_ONESHOT
 #define NO_ACTION_FUNCTION
 // Size optimisations
+
+#define SPLIT_USB_DETECT
