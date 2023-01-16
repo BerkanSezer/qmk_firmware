@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_ESC,     KC_LEFT,        KC_RIGHT,       KC_BSPC,
                     KC_TAB,     C(A(KC_U)),     C(A(KC_I)),     KC_ESC,
                     KC_LSFT,    C(A(KC_J)),     C(A(KC_K)),     C(A(KC_ENT)),
-        KC_MPLY,    TT(1),      KC_RALT,        KC_LGUI,        KC_ENTER
+        KC_MPLY,    TG(1),      KC_RALT,        KC_LGUI,        KC_ENTER
     ),
     /*
             SUB LAYER
